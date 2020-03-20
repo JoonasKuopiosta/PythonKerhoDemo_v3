@@ -82,6 +82,7 @@ clock = pygame.time.Clock()
 
 def startGame():
     all_sprites_list = pygame.sprite.RenderPlain()
+    selector_box = pygame.sprite.RenderPlain()
     wall_list = buildRoom(all_sprites_list)
 
     done = False
@@ -94,21 +95,23 @@ def startGame():
                 done = True
             if event.type == pygame.MOUSEBUTTONDOWN:
                 # If in level editor
-                levelEditor.getClickedTile()
-                visualUpdate = True
+
+                if levelEditor.getClickedTile(screen, selector_box):
+                    visualUpdate = True
 
         if (visualUpdate):
-            # pygame.draw.rect(screen, (0, 128, 255), pygame.Rect(30, 30, 60, 60))
-            # UI.init(screen)
+
             screen.fill((0,0,0))
 
             UI.drawGrid(screen)
             UI.drawTopBar(screen)
-            # wall_list.draw(screen)
+
+            all_sprites_list.draw(screen)
+            selector_box.draw(screen)
 
             pygame.display.flip()
             visualUpdate = False
-            print("VisualUpdate")
+            #print("VisualUpdate")
 
         clock.tick(10)
 

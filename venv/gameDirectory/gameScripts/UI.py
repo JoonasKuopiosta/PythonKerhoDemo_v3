@@ -14,19 +14,6 @@ backGround = pygame.image.load("../assets/background.png");
 def drawGrid(screen):
     # Height is 576 with 32 high upper bar
     # Width is xxx
-    #pygame.draw.line(screen, white, [32, TOP_GAP+1], [WIDTH-32, TOP_GAP+1])
-    #pygame.draw.line(screen, white, [32, TOP_GAP], [WIDTH-32, TOP_GAP])
-
-    #screen.blit(lineEndL, (0, TOP_GAP-30))
-    #screen.blit(lineEndR, (WIDTH-32, TOP_GAP-32))
-
-    #pygame.draw.line(screen, white, [ARENA_SIZE+1, 32], [ARENA_SIZE+1, HEIGHT-32])
-    #pygame.draw.line(screen, white, [ARENA_SIZE, 32], [ARENA_SIZE, HEIGHT-32])
-
-    #screen.blit(lineEndU, (ARENA_SIZE-32, 0))
-    #screen.blit(lineEndD, (ARENA_SIZE-30, HEIGHT-32))
-
-    #screen.blit(lineMiddle, (ARENA_SIZE - 30, TOP_GAP-30))
     screen.blit(backGround, (0,0))
 
 def drawTopBar(screen):
