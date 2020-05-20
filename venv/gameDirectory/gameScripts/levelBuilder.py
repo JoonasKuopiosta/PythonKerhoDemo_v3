@@ -1,6 +1,7 @@
 #TODO: Change tile
 import pygame
 import math
+import bpy
 WIDTH = 800
 HEIGHT = 576
 TOP_GAP = 64
@@ -8,6 +9,19 @@ ARENA_SIZE = 512
 TILE_SIZE = 32
 
 #selectBox = pygame.image.load("../assets/selectBox.png");
+
+class ColormapToTiles:
+    rainbowColors = []
+
+    def __init__(self):
+        #asd
+        pass
+
+    def loadRainbowColors(self):
+        image_file = '../miscs/color_rainbow.bmp'
+        image = bpy.data.images[image_file]
+        print(image)
+
 
 class SelectBox(pygame.sprite.Sprite):
 

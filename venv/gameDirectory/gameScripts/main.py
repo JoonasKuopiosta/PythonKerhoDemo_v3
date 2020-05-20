@@ -1,6 +1,6 @@
 import pygame
 import UI
-import levelEditor
+import levelBuilder
 
 class Wall(pygame.sprite.Sprite):
 
@@ -24,10 +24,10 @@ class Wall(pygame.sprite.Sprite):
 def buildRoom(all_sprites_list):
     wall_list = pygame.sprite.RenderPlain()
 
-    for i in range(0,16):
-        wall = Wall(30, 32*i + 64,0)
-        wall_list.add(wall)
-        all_sprites_list.add(wall)
+    #for i in range(0,16):
+    #    wall = Wall(30, 32*i + 64,0)
+    #    wall_list.add(wall)
+    #    all_sprites_list.add(wall)
 
     return wall_list
 
@@ -96,7 +96,8 @@ def startGame():
             if event.type == pygame.MOUSEBUTTONDOWN:
                 # If in level editor
 
-                if levelEditor.getClickedTile(screen, selector_box):
+                if levelBuilder.getClickedTile(screen, selector_box):
+                    levelBuilder.ColormapToTile.loadRainbowcolors()
                     visualUpdate = True
 
         if (visualUpdate):
